@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FrameNote" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- 主题色配置 -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+    </style>
+
+    <style name="Theme.FrameNote" parent="Base.Theme.FrameNote" />
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 主题色 -->
+    <color name="primary">#FF4A90D9</color>
+    <color name="primaryVariant">#FF3A7BC8</color>
+    <color name="accent">#FF5BA0E8</color>
+
+    <!-- 背景色 -->
+    <color name="background">#FFF5F7FA</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="cardBackground">#FFFFFFFF</color>
+
+    <!-- 文字色 -->
+    <color name="textPrimary">#FF1A1A2E</color>
+    <color name="textSecondary">#FF6B7280</color>
+    <color name="textHint">#FF9CA3AF</color>
+
+    <!-- 分割线 -->
+    <color name="divider">#FFE5E7EB</color>
+
+    <!-- 底部导航 -->
+    <color name="tabActive">#FF4A90D9</color>
+    <color name="tabInactive">#FF9CA3AF</color>
+</resources>

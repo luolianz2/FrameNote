@@ -1,0 +1,48 @@
+# ===== Gradle =====
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ===== IDE =====
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===== Android =====
+local.properties
+**/gradle-daemon-jvm.properties
+*.apk
+*.aab
+*.dex
+*.class
+app/release/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# ===== Qt / C++ =====
+*.o
+*.obj
+*.exe
+moc_*.cpp
+qrc_*.cpp
+Makefile
+*.pro.user
+
+# ===== 项目规划（不上传） =====
+PLAN.md
+
+# ===== 敏感文件 =====
+*.env
+*.env.local

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">框记</string>
+
+    <!-- 框记页 -->
+    <string name="current_notebook">当前笔记本</string>
+    <string name="search">搜索</string>
+    <string name="take_photo">拍照</string>
+    <string name="no_captures">暂无采集内容</string>
+    <string name="no_captures_hint">点击下方拍照按钮开始采集</string>
+    <string name="image_area">图片区</string>
+    <string name="text_area">文字区</string>
+
+    <!-- 底部导航 -->
+    <string name="tab_capture">框记</string>
+    <string name="tab_notebook">笔记本</string>
+    <string name="tab_profile">我的</string>
+</resources>
