@@ -1,11 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <!--  NoActionBar：取消了安卓系统默认的顶部标题栏  -->
     <style name="Base.Theme.FrameNote" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- 主题色配置 -->
+        <!-- App 的主导颜色 -->
         <item name="colorPrimary">@color/primary</item>
+        <!-- App 主导颜色的变体颜色，被应用在特定的组件上 -->
         <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <!-- 在主导颜色之上显示的文字或图标颜色 -->
         <item name="colorOnPrimary">@color/white</item>
+        <!-- App 所有页面的通用背景色 -->
         <item name="android:colorBackground">@color/background</item>
+        <!-- 卡片的背景色 -->
         <item name="colorSurface">@color/surface</item>
     </style>
 

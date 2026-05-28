@@ -6,22 +6,22 @@ package com.luolian.framenote.model;
  */
 public class NoteItem {
 
-    private long id;            // 采集条目唯一标识
-    private long notebookId;    // 所属笔记本 ID
-    private String imagePath;   // 图片本地存储路径
-    private String textContent; // 关联的文字内容（后续 OCR 识别或手动输入）
-    private long createdAt;     // 创建时间戳（毫秒）
+    private long id;            //采集条目唯一标识
+    private long notebookId;    //所属笔记本 ID
+    private String imagePath;   //图片本地存储路径
+    private String textContent; //关联的文字内容
+    private long createdAt;     //创建时间戳（毫秒）
 
-    // 无参构造方法
+    //无参构造方法
     public NoteItem() {}
 
-    // 快速创建采集条目（仅指定所属笔记本）
+    //快速创建采集条目（仅指定所属笔记本）
     public NoteItem(long notebookId) {
         this.notebookId = notebookId;
         this.createdAt = System.currentTimeMillis();
     }
 
-    // 完整构造方法
+    //完整构造方法
     public NoteItem(long id, long notebookId, String imagePath, String textContent, long createdAt) {
         this.id = id;
         this.notebookId = notebookId;
@@ -30,7 +30,7 @@ public class NoteItem {
         this.createdAt = createdAt;
     }
 
-    // ===== Getter / Setter =====
+    //Getter / Setter
 
     public long getId() {
         return id;

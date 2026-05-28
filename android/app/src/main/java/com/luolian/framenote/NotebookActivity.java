@@ -9,30 +9,24 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 /**
- * 框记页 —— 应用主页面
- * 负责拍照采集、展示采集区列表，是用户最常使用的页面
+ * 笔记本页 —— 笔记本列表管理界面
+ * 展示所有笔记本，支持新建、搜索和筛选
  */
-public class CaptureActivity extends AppCompatActivity {
+public class NotebookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
-            启用边到边布局，让应用的内容延伸到手机最顶部的状态栏和最底部的导航条的后面。
-            从而实现现代 App 的全屏沉浸效果，避免黑色的状态栏遮挡界面。
-         */
+        //启用边到边布局，让应用内容延伸到状态栏和导航栏后面
         EdgeToEdge.enable(this);
 
-        //加载在 XML 里画好的界面布局文件
-        setContentView(R.layout.activity_capture);
+        //加载笔记本页的界面布局文件
+        setContentView(R.layout.activity_notebook);
 
         //处理系统栏内边距，使内容不被状态栏和导航栏遮挡
-        //监听系统窗口插页的变化
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            //获取系统栏占用的空间大小（左、上、右、下），单位是像素
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            //给当前页面的根布局设置内边距。这样，内容就不会被系统栏盖住了
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });

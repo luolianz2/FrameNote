@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--  定义了 App 的通用属性  -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FrameNote">
+        <!-- 框记页：应用主页面，启动入口 -->
         <activity
             android:name=".CaptureActivity"
             android:exported="true">
@@ -20,6 +22,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 笔记本页：笔记本列表管理 -->
+        <activity
+            android:name=".NotebookActivity"
+            android:exported="false" />
+
+        <!-- 我的页：个人中心与设置 -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

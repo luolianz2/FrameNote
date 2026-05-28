@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 框记页布局 - 拍照采集主界面 -->
+<!-- 笔记本页布局 - 笔记本列表管理界面 -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,9 +8,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".CaptureActivity">
+    tools:context=".NotebookActivity">
 
-    <!-- 顶部栏：笔记本选择 + 搜索 -->
+    <!-- 顶部栏：笔记本筛选 + 搜索 -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="0dp"
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- 当前笔记本下拉选择器（外层样式，交互在后续迭代实现） -->
+        <!-- 笔记本筛选下拉选择器（外层样式，交互在后续迭代实现） -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,15 +31,15 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/tvNotebookSelector"
+                android:id="@+id/tvNotebookFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/current_notebook"
+                android:text="@string/all_notebooks"
                 android:textColor="@color/textPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- 下拉箭头，固定在文字右侧 1 字符处 -->
+            <!-- 下拉箭头 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
 
         </LinearLayout>
 
-        <!-- 弹性空间，将搜索按钮推到右侧 -->
+        <!-- 弹性空间 -->
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -76,14 +76,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- 中间内容区：采集区列表 -->
+    <!-- 中间内容区：笔记本列表 -->
     <ScrollView
         android:id="@+id/scrollContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/dividerTop"
-        app:layout_constraintBottom_toTopOf="@id/fabCamera"
+        app:layout_constraintBottom_toTopOf="@id/fabNew"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -95,7 +95,7 @@
             android:padding="16dp"
             android:gravity="center_horizontal">
 
-            <!-- 空状态提示：暂无采集内容 -->
+            <!-- 空状态提示：暂无笔记本 -->
             <LinearLayout
                 android:id="@+id/emptyState"
                 android:layout_width="match_parent"
@@ -104,22 +104,21 @@
                 android:gravity="center_horizontal"
                 android:layout_marginTop="80dp">
 
-                <!-- 空状态图标（使用文字占位，后续替换为图片） -->
-
+                <!-- 空状态图标 -->
                 <TextView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:alpha="0.3"
                     android:background="@drawable/ic_launcher_background"
                     android:gravity="center"
-                    android:text="@string/camera_icon"
+                    android:text="@string/notebook_icon"
                     android:textSize="32sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/no_captures"
+                    android:text="@string/no_notebooks"
                     android:textColor="@color/textHint"
                     android:textSize="16sp" />
 
@@ -127,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/no_captures_hint"
+                    android:text="@string/no_notebooks_hint"
                     android:textColor="@color/textHint"
                     android:textSize="13sp"
                     android:alpha="0.7" />
@@ -135,8 +134,8 @@
             </LinearLayout>
 
             <!--
-                采集区列表将在此处动态添加
-                每个采集区包含：图片区域 + 文字区域
+                笔记本列表将在此处动态添加
+                每个列表项包含：图标、标题、创建时间、内容数
                 后续迭代引入 RecyclerView 实现
             -->
 
@@ -144,13 +143,13 @@
 
     </ScrollView>
 
-    <!-- 拍照按钮 -->
+    <!-- 新建按钮 -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabCamera"
+        android:id="@+id/fabNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/take_photo"
-        android:src="@android:drawable/ic_menu_camera"
+        android:contentDescription="@string/new_item"
+        android:src="@android:drawable/ic_input_add"
         app:backgroundTint="@color/primary"
         app:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
@@ -180,7 +179,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- 框记标签（当前选中） -->
+        <!-- 框记标签 -->
         <TextView
             android:id="@+id/tabCapture"
             android:layout_width="0dp"
@@ -188,11 +187,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/tab_capture"
-            android:textColor="@color/tabActive"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textColor="@color/tabInactive"
+            android:textSize="14sp" />
 
-        <!-- 笔记本标签 -->
+        <!-- 笔记本标签（当前选中） -->
         <TextView
             android:id="@+id/tabNotebook"
             android:layout_width="0dp"
@@ -200,8 +198,9 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/tab_notebook"
-            android:textColor="@color/tabInactive"
-            android:textSize="14sp" />
+            android:textColor="@color/tabActive"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <!-- 我的标签 -->
         <TextView

@@ -14,4 +14,24 @@
     <string name="tab_capture">框记</string>
     <string name="tab_notebook">笔记本</string>
     <string name="tab_profile">我的</string>
+
+    <!-- 笔记本页 -->
+    <string name="all_notebooks">全部笔记本</string>
+    <string name="new_item">新建</string>
+    <string name="no_notebooks">暂无笔记本</string>
+    <string name="no_notebooks_hint">点击下方新建按钮创建笔记本</string>
+
+    <!-- 我的页 -->
+    <string name="default_username">未登录</string>
+    <string name="sync_status">同步状态</string>
+    <string name="resync">重新同步</string>
+    <string name="settings">设置</string>
+    <string name="about">关于</string>
+    <string name="arrow_right">›</string>
+
+    <!-- 临时图标（后续图片替代） -->
+    <string name="camera_icon">📷</string>
+    <string name="notebook_icon">📂</string>
+    <string name="sync_icon">📤</string>
+    <string name="drop_down_arrow">▼</string>
 </resources>
